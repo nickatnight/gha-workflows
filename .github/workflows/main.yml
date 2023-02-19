@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  tests:
+  release:
     uses: ./.github/workflows/create-release.yml
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
