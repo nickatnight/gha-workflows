@@ -1,0 +1,10 @@
+name: main
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  tests:
+    uses: ./.github/workflows/create-release.yml
