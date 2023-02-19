@@ -12,9 +12,14 @@ on:
       token:
         description: 'GitHub secret token provided by runner'
         required: true
+    # Map the workflow outputs to job outputs
+    outputs:
+      release_tag:
+        description: 'The first output string'
+        value: ${{ jobs.release_create.outputs.ReleaseTag }}
 
 jobs:
-  create-release:
+  release_create:
     permissions:
       contents: write  # need this permission to publish release
     runs-on: ubuntu-latest
